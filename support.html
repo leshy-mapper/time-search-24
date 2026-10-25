@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Поддержка — 24: Где моё время?</title>
+<meta name="description" content="Поддержка приложения «24: Где моё время?» / Support for the “24: Where's My Time?” app">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f2f5fb;
+    --surface: #ffffff;
+    --text: #181c24;
+    --muted: #4c5362;
+    --line: #c2c8d4;
+    --accent: #0a62c4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141922;
+      --surface: #1c222b;
+      --text: #e3e7ee;
+      --muted: #a8b0bf;
+      --line: #343c49;
+      --accent: #8cc8ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 1.25rem; margin-bottom: 1.5rem; }
+  .app { font-size: .95rem; color: var(--muted); letter-spacing: .02em; margin: 0 0 .35rem; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .5rem; }
+  h2 { font-size: 1.1rem; margin: 2.2rem 0 .6rem; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .35rem; }
+  .date { color: var(--muted); font-size: .9rem; margin: 0; }
+  p, li { color: var(--text); }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  a { color: var(--accent); }
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: .5rem;
+    padding: .9rem 1.1rem;
+    margin: 1.5rem 0 0;
+  }
+  .lede p { margin: .4rem 0; }
+  .switch { float: right; display: flex; gap: .35rem; }
+  .switch button {
+    font: inherit; font-size: .85rem; cursor: pointer;
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--line); border-radius: .4rem;
+    padding: .2rem .55rem;
+  }
+  .switch button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+  footer {
+    margin-top: 3rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Переключатель бесполезен без JS, поэтому в разметке он скрыт
+       и раскрывается скриптом. Без скрипта страница показывает обе
+       языковые версии подряд — контакт и текст остаются читаемыми. -->
+  <div class="switch" hidden>
+    <button type="button" data-lang="ru" aria-pressed="true">Рус</button>
+    <button type="button" data-lang="en" aria-pressed="false">Eng</button>
+  </div>
+
+  <!-- ================================ РУССКИЙ ================================ -->
+  <section data-section="ru" lang="ru">
+    <header>
+      <p class="app">24: Где моё время?</p>
+      <h1>Поддержка</h1>
+      <p class="date">Обновлено 25 октября 2026 года</p>
+    </header>
+
+    <div class="lede">
+      <p><strong>Пишите на <a href="mailto:fefradkin@gmail.com">fefradkin@gmail.com</a></strong> —
+      по-русски или по-английски. Это рабочий адрес, который действительно читают: ни системы
+      тикетов, ни чат-бота, ни очереди.</p>
+    </div>
+
+    <h2>Как сообщить о проблеме</h2>
+    <p>Пожалуйста, укажите четыре вещи — без них проблему обычно не воспроизвести, и ответ
+    превращается в череду уточняющих вопросов:</p>
+    <ul>
+      <li><strong>модель устройства</strong> (например, «iPhone 13», «Redmi Note 12»);</li>
+      <li><strong>версию системы</strong> — iOS или Android;</li>
+      <li><strong>версию приложения</strong> — меню ☰ → «О приложении»;</li>
+      <li><strong>что произошло и чего вы ожидали вместо этого</strong>, и чем были заняты в этот
+      момент: отмечали категорию, разбирали прошедшее время, смотрели сутки в «Архиве».</li>
+    </ul>
+    <p>Скриншот помогает больше описания. Если приложение закрылось само — напишите, происходит ли
+    это после какого-то определённого действия и повторяется ли.</p>
+    <p>Если проблема в учёте за конкретные сутки, не удаляйте их: выгрузите журнал («Архив» →
+    «Выгрузить журнал») и сохраните файл у себя. Присылать его не нужно — это ваши личные данные, —
+    но с ним вы сможете вернуть журнал, если по ходу разбора что-то придётся переустанавливать.</p>
+
+    <h2>Частые вопросы</h2>
+
+    <h3>Приложение закрыто или телефон перезагрузился — время продолжает считаться?</h3>
+    <p>Да, и это главное свойство приложения. Оно не держит в памяти «сейчас идёт категория X»: в
+    базе стоит ваша отметка с моментом нажатия, а время между отметками вычисляется по ним. Поэтому
+    приложению не нужна фоновая работа, оно не расходует заряд, пока вы в него не смотрите, и
+    перезагрузка телефона для него не особый случай: открыв приложение, вы увидите, что всё это
+    время шла та категория, которую вы выбрали последней.</p>
+
+    <h3>Забыл отметить — как раздать прошедшее время?</h3>
+    <p>«Разбивка времени»: удержите значок с глазом внизу экрана 3 секунды или откройте меню ☰ →
+    «Дополнительные возможности». Укажите, сколько из времени с последней отметки ушло на каждую
+    категорию; нераспределённый остаток — это нормально. Начало промежутка можно сдвинуть назад —
+    например, на час, если минуту назад вы нажали не ту категорию; отметки внутри разбивка
+    заменит.</p>
+
+    <h3>Как исправить или удалить учёт за целый период?</h3>
+    <p>«Учёт за период»: удержите значок с лупой внизу экрана 3 секунды или откройте меню ☰ →
+    «Дополнительные возможности». Выберите начало, конец и категорию — всё время в промежутке
+    достанется ей. Вариант «Не распределено» удаляет учёт за промежуток. Перед записью приложение
+    переспросит: отменить это нельзя.</p>
+
+    <h3>Как перенести журнал на другой телефон?</h3>
+    <p>В нижней части «Архива»: «Выгрузить журнал» складывает журнал и категории в один файл,
+    «Загрузить журнал» на другом устройстве читает его обратно. Файл обычный, положить его можно
+    куда угодно. Загрузка добавляет то, чего ещё нет, и не затирает уже имеющееся; настройки в файл
+    не попадают и на новом телефоне остаются своими.</p>
+
+    <h3>Удалил категорию, а она осталась в «Архиве»</h3>
+    <p>Так и задумано. Если на категорию уже есть отметки, удаление её <em>скрывает</em>: кнопка с
+    Наблюдения уходит, а прошлые сутки в «Архиве» сохраняют её долю — иначе прожитое время
+    переписывалось бы задним числом. Скрытую категорию можно вернуть в «Редактировании» кнопкой
+    «Вернуть». Категория, на которую отметок нет, удаляется полностью.</p>
+
+    <h3>Сутки у меня начинаются не в полночь</h3>
+    <p>Меню ☰ → «Настройки» → «Начало суток»: укажите час, с которого считать новые сутки. Ночь до
+    этого часа будет относиться к предыдущим суткам — и в календаре «Архива», и в разбивке по
+    часам.</p>
+
+    <h3>Как сменить язык интерфейса?</h3>
+    <p>Меню ☰ → «Настройки» → «Язык»: русский или английский. От языка системы он не зависит.</p>
+
+    <h3>Уведомление на экране блокировки: где включить и почему его нет на iPhone</h3>
+    <p>Меню ☰ → «Настройки» → «Уведомление на экране блокировки». Это только Android: на iOS
+    переключателя нет. При включении приложение предупредит, что названия категорий и то, что идёт
+    сейчас, увидит любой, кто возьмёт телефон, и что переключать учёт можно будет без разблокировки;
+    затем система спросит разрешение на уведомления. Без разрешения переключатель не включится.</p>
+
+    <h3>Приложение просит разрешение на уведомления — обязательно его давать?</h3>
+    <p>Нет. Оно спрашивается только в тот момент, когда вы сами включаете уведомление на экране
+    блокировки, и нужно только для него. Откажете — всё остальное работает как было. Других
+    разрешений приложение не просит вовсе: ни геолокации, ни камеры, ни доступа к файлам.</p>
+
+    <h3>Приложению нужен интернет?</h3>
+    <p>Нет, оно не выходит в сеть совсем — ни за данными, ни за обновлениями, ни за статистикой. В
+    самолёте, в метро и без сим-карты оно работает ровно так же.</p>
+
+    <h3>Почему нет синхронизации между устройствами?</h3>
+    <p>Синхронизация означала бы сервер, учётные записи и ваш журнал в чужих руках. Вместо неё —
+    перенос файлом: выгрузили на одном устройстве, загрузили на другом (см. выше). Если
+    синхронизация когда-нибудь появится, об этом будет сказано в описании обновления и в
+    <a href="privacy.html">политике конфиденциальности</a>.</p>
+
+    <h3>Где посмотреть, как всё устроено, не читая эту страницу?</h3>
+    <p>В самом приложении: меню ☰ → «Как пользоваться» — вся инструкция; кнопка «?» справа сверху —
+    подсказка к тому экрану, который открыт прямо сейчас.</p>
+
+    <h2>Данные и приватность</h2>
+    <p>Приложение ничего не собирает и ничего не отправляет разработчику: журнал, категории и
+    настройки остаются на вашем устройстве. Подробности — в
+    <a href="privacy.html">политике конфиденциальности</a>.</p>
+
+    <h2>Контакты</h2>
+    <p><a href="mailto:fefradkin@gmail.com">fefradkin@gmail.com</a></p>
+
+    <footer>
+      © 2026 Фрадкин Фёдор. Все права на приложение, его тексты и изображения защищены;
+      использование их в других продуктах не разрешается.
+    </footer>
+  </section>
+
+  <!-- ================================ ENGLISH ================================ -->
+  <section data-section="en" lang="en">
+    <header>
+      <p class="app">24: Where&rsquo;s My Time?</p>
+      <h1>Support</h1>
+      <p class="date">Updated 25 October 2026</p>
+    </header>
+
+    <div class="lede">
+      <p><strong>Write to <a href="mailto:fefradkin@gmail.com">fefradkin@gmail.com</a></strong> — in
+      Russian or English. It is a working address that is actually read; there is no ticket system,
+      no chat bot and no queue.</p>
+    </div>
+
+    <h2>Reporting a problem</h2>
+    <p>Please include these four things — without them a problem usually cannot be reproduced, and
+    the reply turns into a round of questions:</p>
+    <ul>
+      <li><strong>the device model</strong> (for example &ldquo;iPhone 13&rdquo;, &ldquo;Redmi Note
+      12&rdquo;);</li>
+      <li><strong>the system version</strong> — iOS or Android;</li>
+      <li><strong>the app version</strong> — menu ☰ → &ldquo;About&rdquo;;</li>
+      <li><strong>what happened and what you expected instead</strong>, and what you were doing at
+      the time: marking a category, splitting past time, looking at a day in
+      &ldquo;Archive&rdquo;.</li>
+    </ul>
+    <p>A screenshot helps more than a description. If the app closed by itself, please say whether it
+    happened right after some particular action and whether it repeats.</p>
+    <p>If the problem concerns a particular day&rsquo;s records, do not delete them: export the
+    journal (&ldquo;Archive&rdquo; → &ldquo;Export journal&rdquo;) and keep the file. There is no
+    need to send it — it is your personal data — but with it you can restore the journal if anything
+    has to be reinstalled while we work the problem out.</p>
+
+    <h2>Frequent questions</h2>
+
+    <h3>The app is closed, or the phone rebooted — does time keep being counted?</h3>
+    <p>Yes, and that is the app&rsquo;s central property. It does not hold &ldquo;category X is
+    running now&rdquo; in memory: the database holds your mark with the moment you tapped it, and the
+    time between marks is computed from those marks. That is why the app needs no background work,
+    why it does not drain the battery while you are not looking at it, and why a reboot is nothing
+    special for it: when you open the app, you will see that all that time went to the category you
+    picked last.</p>
+
+    <h3>I forgot to mark something — how do I distribute the time that has passed?</h3>
+    <p>&ldquo;Split past time&rdquo;: hold the eye icon at the bottom of the screen for 3 seconds, or
+    open menu ☰ → &ldquo;Extra features&rdquo;. Say how much of the time since the last mark went to
+    each category; leaving a remainder unassigned is perfectly fine. The start of the interval can be
+    moved back — by an hour, say, if you tapped the wrong category a minute ago; the split replaces
+    the marks inside it.</p>
+
+    <h3>How do I correct or erase the records for a whole period?</h3>
+    <p>&ldquo;Reassign a period&rdquo;: hold the magnifier icon at the bottom of the screen for 3
+    seconds, or open menu ☰ → &ldquo;Extra features&rdquo;. Choose a start, an end and a category —
+    all the time in the interval goes to it. The &ldquo;Unassigned&rdquo; option erases the records
+    for the interval instead. The app asks for confirmation first: this cannot be undone.</p>
+
+    <h3>How do I move my journal to another phone?</h3>
+    <p>At the bottom of &ldquo;Archive&rdquo;: &ldquo;Export journal&rdquo; puts the journal and the
+    categories into a single file, and &ldquo;Import journal&rdquo; on the other device reads it
+    back. The file is an ordinary one — put it anywhere you like. Importing adds what is not there
+    yet and does not overwrite what is; settings are not included in the file, so the new phone keeps
+    its own.</p>
+
+    <h3>I deleted a category and it is still in &ldquo;Archive&rdquo;</h3>
+    <p>That is by design. If a category already has marks against it, deleting it <em>hides</em> it:
+    the button disappears from Observe, while past days in &ldquo;Archive&rdquo; keep its share —
+    otherwise time you had already lived through would be rewritten after the fact. A hidden category
+    can be brought back in &ldquo;Edit&rdquo; with &ldquo;Restore&rdquo;. A category with no marks
+    against it is deleted outright.</p>
+
+    <h3>My day does not start at midnight</h3>
+    <p>Menu ☰ → &ldquo;Settings&rdquo; → &ldquo;Day starts at&rdquo;: set the hour a new day is
+    counted from. The night before that hour then belongs to the previous day — both in the
+    &ldquo;Archive&rdquo; calendar and in the hour-by-hour breakdown.</p>
+
+    <h3>How do I change the interface language?</h3>
+    <p>Menu ☰ → &ldquo;Settings&rdquo; → &ldquo;Language&rdquo;: Russian or English. It is
+    independent of the system language.</p>
+
+    <h3>The lock-screen notification: where to turn it on, and why there is none on iPhone</h3>
+    <p>Menu ☰ → &ldquo;Settings&rdquo; → &ldquo;Lock screen notification&rdquo;. It is Android only:
+    there is no such switch on iOS. When you turn it on, the app warns you that the category names
+    and what is running now will be visible to anyone who picks up the phone, and that tracking can
+    be switched without unlocking it; then the system asks for notification permission. Without that
+    permission the switch will not turn on.</p>
+
+    <h3>The app asks for notification permission — do I have to grant it?</h3>
+    <p>No. It is requested only at the moment you turn the lock-screen notification on yourself, and
+    it is needed only for that. Refuse it and everything else works as before. The app asks for no
+    other permissions at all: no location, no camera, no file access.</p>
+
+    <h3>Does the app need the internet?</h3>
+    <p>No, it does not go online at all — not for data, not for updates, not for statistics. On a
+    plane, in the underground and with no SIM card it works exactly the same.</p>
+
+    <h3>Why is there no sync between devices?</h3>
+    <p>Sync would mean a server, accounts, and your journal in someone else&rsquo;s hands. Instead
+    there is a file: export on one device, import on the other (see above). If sync ever appears, it
+    will be stated in the update description and in the
+    <a href="privacy.html">privacy policy</a>.</p>
+
+    <h3>Where can I read how it all works without reading this page?</h3>
+    <p>Inside the app: menu ☰ → &ldquo;How to use&rdquo; for the whole guide; the &ldquo;?&rdquo;
+    button at the top right for a hint about the screen that is open right now.</p>
+
+    <h2>Data and privacy</h2>
+    <p>The app collects nothing and sends nothing to the developer: the journal, the categories and
+    the settings stay on your device. Details are in the
+    <a href="privacy.html">privacy policy</a>.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:fefradkin@gmail.com">fefradkin@gmail.com</a></p>
+
+    <footer>
+      © 2026 Fradkin Fedor. All rights in the application, its texts and images are reserved; their
+      use in other products is not permitted.
+    </footer>
+  </section>
+
+</div>
+
+<script>
+  // Скрипт — только удобство. Без него страница показывает обе языковые
+  // версии подряд: текст, контакт и ссылки остаются на месте.
+  var LANGS = ["ru", "en"];
+
+  var switcher = document.querySelector(".switch");
+  var buttons = document.querySelectorAll(".switch button");
+  var sections = document.querySelectorAll("section[data-section]");
+
+  var TITLES = {
+    ru: "Поддержка — 24: Где моё время?",
+    en: "Support — 24: Where's My Time?"
+  };
+
+  function show(lang) {
+    sections.forEach(function (s) { s.hidden = s.dataset.section !== lang; });
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang;
+    document.title = TITLES[lang];
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      show(b.dataset.lang);
+      history.replaceState(null, "", "#" + b.dataset.lang);
+    });
+  });
+
+  function preferred() {
+    // Язык по ссылке (#en) важнее языка браузера — приложение может привести сюда явно.
+    var hash = location.hash.replace("#", "").toLowerCase();
+    if (LANGS.indexOf(hash) !== -1) return hash;
+
+    var list = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || "ru"];
+    for (var i = 0; i < list.length; i++) {
+      var tag = String(list[i]).toLowerCase().split("-")[0];
+      if (LANGS.indexOf(tag) !== -1) return tag;
+    }
+    return "ru";
+  }
+
+  switcher.hidden = false;
+  show(preferred());
+</script>
+</body>
+</html>
